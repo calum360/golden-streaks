@@ -195,6 +195,8 @@ function scrollToCard(index) {
   });
   
 
+  
+
 	setTimeout(() => {
     updateHighlight();
 }, 400);
@@ -548,6 +550,7 @@ window.addEventListener('resize', () => {
     });
   }, 300);
 });
+/**
 document.querySelectorAll('.nextCardBtn').forEach(btn => {
   btn.addEventListener('click', () => {
     const currentCard = btn.closest('.domainCard');
@@ -566,7 +569,7 @@ document.querySelectorAll('.prevCardBtn').forEach(btn => {
       prevCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
-});
+}); **/
 
 
 updateNavAlignment(currentCardIndex, document.querySelectorAll('.domainCard').length);
