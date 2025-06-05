@@ -560,7 +560,8 @@ document.querySelectorAll('.nextCardBtn').forEach(btn => {
     }
   });
 });
-
+																											EDITED OUT ON 05/06/2025 IN ORDER TO PATCH 
+																											PROBLEM OF VIEWER NOT FUNCTIONING ON SAFARI/iPHONE
 document.querySelectorAll('.prevCardBtn').forEach(btn => {
   btn.addEventListener('click', () => {
     const currentCard = btn.closest('.domainCard');
