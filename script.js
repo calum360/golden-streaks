@@ -108,7 +108,7 @@ function updateNavButtons() {
   });
 }
 
-/*function scrollToCard(index) {
+function scrollToCard(index) {
   const cards = document.querySelectorAll('.domainCard');
   if (index < 0 || index >= cards.length) return;
 
@@ -151,7 +151,7 @@ function collapseAllDescriptions() {
     const toggle = desc.closest('.cardContent').querySelector('.toggleDesc');
     if (toggle) toggle.textContent = 'Read More';
   });
-}   26/06/2025 */
+}   
 
 
 
