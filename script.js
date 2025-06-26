@@ -1,8 +1,5 @@
 // Refactored viewer script preserving correct border behavior
 
-if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-  document.getElementById('domainViewer').style.scrollSnapType = 'none';
-}
 
 const viewer = document.getElementById('domainViewer');
 //const highlightFrame = document.createElement('div');				//Commented out just now
