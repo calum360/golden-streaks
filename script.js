@@ -789,7 +789,12 @@ document.addEventListener('keydown', (e) => {
 
 }
 
-
-
-
-
+// iOS scroll fix: allow programmatic scroll, block manual swipe
+if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+  const viewer = document.getElementById("domainViewer");
+  if (viewer) {
+    viewer.addEventListener("touchmove", function (e) {
+      e.preventDefault();
+    }, { passive: false });
+  }
+}
