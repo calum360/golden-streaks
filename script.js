@@ -223,7 +223,7 @@ function scrollToCard(index) {
 } 
 
 
-document.querySelectorAll('.nextCardBtn').forEach(btn => {
+/*document.querySelectorAll('.nextCardBtn').forEach(btn => {
   btn.addEventListener('click', () => {
    
 	scrollToCard(currentCardIndex + 1);
@@ -235,6 +235,25 @@ document.querySelectorAll('.prevCardBtn').forEach(btn => {
   btn.addEventListener('click', () => {
     scrollToCard(currentCardIndex - 1);
 
+  });
+}); 26/06/2025 */
+document.querySelectorAll('.nextCardBtn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        scrollToCard(currentCardIndex + 1);
+      });
+    });
+  });
+});
+
+document.querySelectorAll('.prevCardBtn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        scrollToCard(currentCardIndex - 1);
+      });
+    });
   });
 });
 
