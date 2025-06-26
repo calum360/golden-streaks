@@ -169,11 +169,13 @@ function moveHighlight() {
 }
 
 function scrollToCard(index) {
+	console.log('🎯 scrollToCard START - index:', index);
+  console.log('📱 Initial viewer.scrollTop:', viewer.scrollTop);
   collapseAllDescriptions();
   
   const cards = document.querySelectorAll('.domainCard');
   if (index < 0 || index >= cards.length) return;
-
+  console.log('❌ Invalid index, returning');
   // Clear all activeCard and remove buttons from all cards
   cards.forEach(card => {
     card.classList.remove('activeCard');
@@ -186,6 +188,10 @@ function scrollToCard(index) {
   const card = cards[index];
   const top = card.offsetTop;
 
+
+	  console.log('📏 Target card offsetTop:', top);
+  console.log('📱 About to scroll to:', top);
+
   // Add activeCard class
   card.classList.add('activeCard');
 
@@ -194,6 +200,8 @@ function scrollToCard(index) {
     top: top,
     behavior: 'smooth'
   });
+
+	console.log('📱 Immediately after scrollTo - viewer.scrollTop:', viewer.scrollTop);
 
   // WAIT LONGER for highlight update on iOS
   setTimeout(() => {
