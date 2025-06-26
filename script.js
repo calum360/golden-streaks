@@ -239,6 +239,10 @@ document.querySelectorAll('.prevCardBtn').forEach(btn => {
 }); 26/06/2025 */
 document.querySelectorAll('.nextCardBtn').forEach(btn => {
   btn.addEventListener('click', () => {
+
+	   // Force the same body state as viewer opening
+    document.body.style.setProperty('overflow', 'hidden', 'important');
+    document.documentElement.style.setProperty('overflow', 'hidden', 'important');
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         scrollToCard(currentCardIndex + 1);
@@ -249,6 +253,9 @@ document.querySelectorAll('.nextCardBtn').forEach(btn => {
 
 document.querySelectorAll('.prevCardBtn').forEach(btn => {
   btn.addEventListener('click', () => {
+	   // Force the same body state as viewer opening
+    document.body.style.setProperty('overflow', 'hidden', 'important');
+    document.documentElement.style.setProperty('overflow', 'hidden', 'important');
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         scrollToCard(currentCardIndex - 1);
