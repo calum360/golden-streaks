@@ -395,11 +395,9 @@ updateSlideCounter(currentIndex, allCards.length);
 function setViewerState(open) {
 	
 	if (open) {
-/*  document.body.style.setProperty('overflow', 'hidden', 'important');
-  document.documentElement.style.setProperty('overflow', 'hidden', 'important');    26/05/2025 */ 
+ document.body.style.setProperty('overflow', 'hidden', 'important');
+  document.documentElement.style.setProperty('overflow', 'hidden', 'important');    
 
-		 document.body.style.overflow = 'hidden';
-  document.documentElement.style.overflow = 'hidden';
   
   if (open) {
   const savedIndex = parseInt(localStorage.getItem('lastCardIndex') || '0', 10);
@@ -497,7 +495,7 @@ viewer.addEventListener('scroll', () => {
   requestAnimationFrame(updateHighlight);
 });*/								//commented out 28/04/25 06:45
 window.addEventListener('load', () => {
-	//viewer.classList.add('no-scroll'); 26/06/2025
+	viewer.classList.add('no-scroll'); 
 
 	updateNavButtons();
   const shouldRestore = localStorage.getItem('viewerOpen') === 'true';
