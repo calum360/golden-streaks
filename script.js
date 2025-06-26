@@ -116,21 +116,12 @@ function scrollToCard(index) {
   const top = card.offsetTop;
   
   
-/*
+
   viewer.scrollTo({
     top: top,
     behavior: 'smooth'
-  }); 26/06/2025 */
-	// Force layout flush
-viewer.offsetHeight; 
-
-// Try setting scrollTop manually (iOS reliable)
-viewer.scrollTop = top;
-
-// Try forcing again after delay to override iOS reversion
-setTimeout(() => {
-  viewer.scrollTop = top;
-}, 50);
+  }); 
+	
 
 
 
