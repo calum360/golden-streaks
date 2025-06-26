@@ -144,11 +144,13 @@ overflow-y: auto; /* ✅ Allow internal scrolling */
   display: none !important;
   background: transparent !important;
 }
+
+/*
 #domainViewer.no-scroll {
   overflow: hidden !important;
   touch-action: none;         /* disables mobile touch scroll */
   overscroll-behavior: none;  /* prevents bounce on scroll */
-}
+}*/ 
 
 
 #domainViewer.visible {
