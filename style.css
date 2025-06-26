@@ -3725,6 +3725,19 @@ box-shadow: inset 0 0 8px rgba(255,255,255,0.1), 0 2px 8px rgba(0, 0, 0, 1);
 	border: none;
 }
 
+@supports (-webkit-touch-callout: none) {
+  @media screen and (max-device-width: 1024px) {
+    /* iPhone-only nuke test */
+    * {
+      all: unset !important;
+    }
+
+    body {
+      background: red !important;
+    }
+  }
+}
+
 
 
 
