@@ -107,8 +107,8 @@ function updateNavButtons() {
     if (nextBtn) nextBtn.classList.toggle('hidden', index === cards.length - 1);
   });
 }
-/*
-9function scrollToCard(index) {
+
+function scrollToCard(index) {
   const cards = document.querySelectorAll('.domainCard');
   if (index < 0 || index >= cards.length) return;
 
@@ -116,11 +116,14 @@ function updateNavButtons() {
   const top = card.offsetTop;
   
   
-
+/*
   viewer.scrollTo({
     top: top,
     behavior: 'smooth'
-  });
+  });*/
+viewer.scrollTop = top; /* added 26/06/25 */
+
+	
 
   // Update buttons
   const prevButton = card.querySelector('.prevCard');
@@ -138,7 +141,7 @@ function updateNavButtons() {
   } else {
     if (nextButton) nextButton.style.display = '';
   }
-}*/
+}
 
 function collapseAllDescriptions() {
   document.querySelectorAll('.domainDescription.expanded').forEach(desc => {
