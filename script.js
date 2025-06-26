@@ -109,7 +109,7 @@ function updateNavButtons() {
   });
 }
 /*
-9function scrollToCard(index) {
+function scrollToCard(index) {
   const cards = document.querySelectorAll('.domainCard');
   if (index < 0 || index >= cards.length) return;
 
@@ -190,11 +190,24 @@ function scrollToCard(index) {
   card.classList.add('activeCard');
 
   // Scroll to it
+/*  viewer.scrollTo({
+    top: top,
+    behavior: 'smooth'
+  });				26/06/2025 */
+    // iOS Safari fix - temporarily enable scrolling
+  viewer.style.overflowY = 'scroll';
+  viewer.style.scrollbarWidth = 'none';
+  
+  // Scroll to it
   viewer.scrollTo({
     top: top,
     behavior: 'smooth'
   });
   
+  // Hide scrollbar again after scroll
+  setTimeout(() => {
+    viewer.style.overflowY = 'auto';
+  }, 300); /* end */
 
   
 
