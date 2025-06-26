@@ -497,7 +497,7 @@ viewer.addEventListener('scroll', () => {
   requestAnimationFrame(updateHighlight);
 });*/								//commented out 28/04/25 06:45
 window.addEventListener('load', () => {
-	viewer.classList.add('no-scroll');
+	//viewer.classList.add('no-scroll'); 26/06/2025
 
 	updateNavButtons();
   const shouldRestore = localStorage.getItem('viewerOpen') === 'true';
