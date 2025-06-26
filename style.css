@@ -118,7 +118,7 @@ button {
  min-width: 100vw;
   box-sizing: border-box;
 
-  /*scroll-snap-type: y mandatory; 26-06-2025 */ 
+  scroll-snap-type: y mandatory; 
   scroll-padding-top: 2.5vh;
   scroll-padding-bottom: 2.5vh;
   padding: 0;
