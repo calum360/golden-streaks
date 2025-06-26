@@ -550,7 +550,7 @@ window.addEventListener('resize', () => {
     });
   }, 300);
 });
-/**
+
 document.querySelectorAll('.nextCardBtn').forEach(btn => {
   btn.addEventListener('click', () => {
     const currentCard = btn.closest('.domainCard');
@@ -560,8 +560,8 @@ document.querySelectorAll('.nextCardBtn').forEach(btn => {
     }
   });
 });
-																											EDITED OUT ON 05/06/2025 IN ORDER TO PATCH 
-																											PROBLEM OF VIEWER NOT FUNCTIONING ON SAFARI/iPHONE
+																											
+																								
 document.querySelectorAll('.prevCardBtn').forEach(btn => {
   btn.addEventListener('click', () => {
     const currentCard = btn.closest('.domainCard');
@@ -570,7 +570,7 @@ document.querySelectorAll('.prevCardBtn').forEach(btn => {
       prevCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
-}); **/
+}); 
 
 
 updateNavAlignment(currentCardIndex, document.querySelectorAll('.domainCard').length);
