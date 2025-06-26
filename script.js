@@ -116,12 +116,12 @@ function scrollToCard(index) {
   const top = card.offsetTop;
   
   
-/*
+
   viewer.scrollTo({
     top: top,
     behavior: 'smooth'
-  });*/
-viewer.scrollTop = top; /* added 26/06/25 */
+  });
+
 
 	
 
