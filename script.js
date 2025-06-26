@@ -168,7 +168,7 @@ function moveHighlight() {
     highlightFrame.style.display = 'block';
 }
 
-function scrollToCard(index) {
+/*function scrollToCard(index) {
 	collapseAllDescriptions();
 	
   const cards = document.querySelectorAll('.domainCard');
@@ -220,7 +220,63 @@ function scrollToCard(index) {
   updateSlideCounter(currentCardIndex, document.querySelectorAll('.domainCard').length);
 	localStorage.setItem('lastCardIndex', index);
 
-}
+} 26/06/2025 */
+
+function scrollToCard(index) {
+  collapseAllDescriptions();
+  
+  const cards = document.querySelectorAll('.domainCard');
+  if (index < 0 || index >= cards.length) return;
+
+  // Clear all activeCard and remove buttons from all cards
+  cards.forEach(card => {
+    card.classList.remove('activeCard');
+    const next = card.querySelector('.nextCard');
+    const prev = card.querySelector('.prevCard');
+    if (next) next.style.display = 'none';
+    if (prev) prev.style.display = 'none';
+  });
+
+  const card = cards[index];
+  const top = card.offsetTop;
+
+  // Add activeCard class
+  card.classList.add('activeCard');
+
+  // iOS Safari aggressive fix
+  viewer.style.overflow = 'scroll';
+  viewer.style.webkitOverflowScrolling = 'touch';
+  
+  // Use scrollTop instead of scrollTo for iOS
+  viewer.scrollTop = top;
+  
+  // Restore styles
+  setTimeout(() => {
+    viewer.style.overflow = '';
+    viewer.style.webkitOverflowScrolling = '';
+  }, 100);
+
+  setTimeout(() => {
+    updateHighlight();
+  }, 400);
+
+  // Show nav buttons only on active card
+  const prevButton = card.querySelector('.prevCard');
+  const nextButton = card.querySelector('.nextCard');
+
+  if (prevButton) {
+    prevButton.style.display = index === 0 ? 'none' : '';
+  }
+  if (nextButton) {
+    nextButton.style.display = index === cards.length - 1 ? 'none' : '';
+  }
+
+  // Track index globally
+  currentCardIndex = index;
+  updateNavAlignment(currentCardIndex, document.querySelectorAll('.domainCard').length);
+  updateSlideCounter(currentCardIndex, document.querySelectorAll('.domainCard').length);
+  localStorage.setItem('lastCardIndex', index);
+} /*end try*/
 
 
 
