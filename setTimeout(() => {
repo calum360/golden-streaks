@@ -107,8 +107,8 @@ function updateNavButtons() {
     if (nextBtn) nextBtn.classList.toggle('hidden', index === cards.length - 1);
   });
 }
-
-function scrollToCard(index) {
+/*
+9function scrollToCard(index) {
   const cards = document.querySelectorAll('.domainCard');
   if (index < 0 || index >= cards.length) return;
 
@@ -120,12 +120,7 @@ function scrollToCard(index) {
   viewer.scrollTo({
     top: top,
     behavior: 'smooth'
-  }); 
-	
-
-
-
-	
+  });
 
   // Update buttons
   const prevButton = card.querySelector('.prevCard');
@@ -143,7 +138,7 @@ function scrollToCard(index) {
   } else {
     if (nextButton) nextButton.style.display = '';
   }
-}
+}*/
 
 function collapseAllDescriptions() {
   document.querySelectorAll('.domainDescription.expanded').forEach(desc => {
@@ -151,7 +146,7 @@ function collapseAllDescriptions() {
     const toggle = desc.closest('.cardContent').querySelector('.toggleDesc');
     if (toggle) toggle.textContent = 'Read More';
   });
-}   
+}
 
 
 
@@ -187,23 +182,8 @@ function scrollToCard(index) {
     if (prev) prev.style.display = 'none';
   });
 
-/*  const card = cards[index];
-  const top = card.offsetTop;  26/06/2025*/
-  const top = cards[index].offsetTop;
-
-// iOS scroll fix: disable snap before scroll
-viewer.style.scrollSnapType = 'none';
-
-requestAnimationFrame(() => {
-  setTimeout(() => {
-    viewer.scrollTop = top + 1;
-    viewer.scrollTop = top;
-
-    // Re-enable scroll snap after scroll completes
-    viewer.style.scrollSnapType = 'y mandatory';
-  }, 100);
-});
-
+  const card = cards[index];
+  const top = card.offsetTop;
 
   // Add activeCard class
   card.classList.add('activeCard');
@@ -412,9 +392,8 @@ updateSlideCounter(currentIndex, allCards.length);
 function setViewerState(open) {
 	
 	if (open) {
- document.body.style.setProperty('overflow', 'hidden', 'important');
-  document.documentElement.style.setProperty('overflow', 'hidden', 'important');    
-
+  document.body.style.setProperty('overflow', 'hidden', 'important');
+  document.documentElement.style.setProperty('overflow', 'hidden', 'important');
   
   if (open) {
   const savedIndex = parseInt(localStorage.getItem('lastCardIndex') || '0', 10);
@@ -512,7 +491,7 @@ viewer.addEventListener('scroll', () => {
   requestAnimationFrame(updateHighlight);
 });*/								//commented out 28/04/25 06:45
 window.addEventListener('load', () => {
-	viewer.classList.add('no-scroll'); 
+	viewer.classList.add('no-scroll');
 
 	updateNavButtons();
   const shouldRestore = localStorage.getItem('viewerOpen') === 'true';
