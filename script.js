@@ -395,8 +395,11 @@ updateSlideCounter(currentIndex, allCards.length);
 function setViewerState(open) {
 	
 	if (open) {
-  document.body.style.setProperty('overflow', 'hidden', 'important');
-  document.documentElement.style.setProperty('overflow', 'hidden', 'important');
+/*  document.body.style.setProperty('overflow', 'hidden', 'important');
+  document.documentElement.style.setProperty('overflow', 'hidden', 'important');    26/05/2025 */ 
+
+		 document.body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
   
   if (open) {
   const savedIndex = parseInt(localStorage.getItem('lastCardIndex') || '0', 10);
