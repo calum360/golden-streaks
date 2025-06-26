@@ -5,7 +5,14 @@
 
 
 
-
+<script>
+  if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'ios-style.css'; // <-- your custom iOS CSS here
+    document.head.appendChild(link);
+  }
+</script>
 
 
 	<meta name="description" content="Exclusive .com casino domains for operators, betting brands & slot sites. Built to convert.">
