@@ -187,8 +187,23 @@ function scrollToCard(index) {
     if (prev) prev.style.display = 'none';
   });
 
-  const card = cards[index];
-  const top = card.offsetTop;
+/*  const card = cards[index];
+  const top = card.offsetTop;  26/06/2025*/
+  const top = cards[index].offsetTop;
+
+// iOS scroll fix: disable snap before scroll
+viewer.style.scrollSnapType = 'none';
+
+requestAnimationFrame(() => {
+  setTimeout(() => {
+    viewer.scrollTop = top + 1;
+    viewer.scrollTop = top;
+
+    // Re-enable scroll snap after scroll completes
+    viewer.style.scrollSnapType = 'y mandatory';
+  }, 100);
+});
+
 
   // Add activeCard class
   card.classList.add('activeCard');
