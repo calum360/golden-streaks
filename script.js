@@ -169,8 +169,8 @@ function moveHighlight() {
 }
 
 function scrollToCard(index) {
-	collapseAllDescriptions();
-	
+  collapseAllDescriptions();
+  
   const cards = document.querySelectorAll('.domainCard');
   if (index < 0 || index >= cards.length) return;
 
@@ -193,17 +193,14 @@ function scrollToCard(index) {
   viewer.scrollTo({
     top: top,
     behavior: 'smooth'
-  });				
-   
+  });
 
-  
-
-	setTimeout(() => {
+  // WAIT LONGER for highlight update on iOS
+  setTimeout(() => {
     updateHighlight();
-}, 400);
+  }, 800); // Increased from 400
 
-
-  // Show nav buttons only on active card
+  // Show nav buttons immediately (don't wait for highlight)
   const prevButton = card.querySelector('.prevCard');
   const nextButton = card.querySelector('.nextCard');
 
@@ -218,10 +215,8 @@ function scrollToCard(index) {
   currentCardIndex = index;
   updateNavAlignment(currentCardIndex, document.querySelectorAll('.domainCard').length);
   updateSlideCounter(currentCardIndex, document.querySelectorAll('.domainCard').length);
-	localStorage.setItem('lastCardIndex', index);
-
-} 
-
+  localStorage.setItem('lastCardIndex', index);
+}
 
 /*document.querySelectorAll('.nextCardBtn').forEach(btn => {
   btn.addEventListener('click', () => {
