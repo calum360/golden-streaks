@@ -118,7 +118,7 @@ button {
  min-width: 100vw;
   box-sizing: border-box;
 
-  scroll-snap-type: y mandatory; 
+  scroll-snap-type: y mandatory;
   scroll-padding-top: 2.5vh;
   scroll-padding-bottom: 2.5vh;
   padding: 0;
@@ -144,13 +144,11 @@ overflow-y: auto; /* ✅ Allow internal scrolling */
   display: none !important;
   background: transparent !important;
 }
-
-
 #domainViewer.no-scroll {
   overflow: hidden !important;
   touch-action: none;         /* disables mobile touch scroll */
   overscroll-behavior: none;  /* prevents bounce on scroll */
-} 
+}
 
 
 #domainViewer.visible {
@@ -3727,7 +3725,6 @@ box-shadow: inset 0 0 8px rgba(255,255,255,0.1), 0 2px 8px rgba(0, 0, 0, 1);
 	border: none;
 }
 
-
 @supports (-webkit-touch-callout: none) {
   #domainViewer {
     overflow-y: scroll !important;
@@ -3739,4 +3736,3 @@ box-shadow: inset 0 0 8px rgba(255,255,255,0.1), 0 2px 8px rgba(0, 0, 0, 1);
     display: none;
   }
 }
-
