@@ -189,15 +189,11 @@ function scrollToCard(index) {
   card.classList.add('activeCard');
 
   // Scroll to it
-/**  viewer.scrollTo({
-    top: top,
-    behavior: 'smooth'
-  });**/
-	requestAnimationFrame(() => {
   viewer.scrollTo({
     top: top,
     behavior: 'smooth'
   });
+	
   
 if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
   setTimeout(() => {
