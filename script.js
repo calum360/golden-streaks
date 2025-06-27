@@ -199,7 +199,7 @@ if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
   setTimeout(() => {
     viewer.scrollTo({ top: top + 1 });
     viewer.scrollTo({ top: top });
-  }, 50);
+  }, 10);
 }
   
 
