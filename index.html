@@ -3,6 +3,17 @@
 <html class="preload-viewer">
 <head>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const openViewerBtn = document.getElementById("openViewerBtn");
+    if (openViewerBtn) {
+      openViewerBtn.addEventListener("click", () => {
+        localStorage.setItem('viewerOpen', 'true');
+        location.reload(); // viewer will auto-open after reload
+      });
+    }
+  });
+</script>
 
 
 
