@@ -3732,7 +3732,7 @@ box-shadow: inset 0 0 8px rgba(255,255,255,0.1), 0 2px 8px rgba(0, 0, 0, 1);
     visibility: visible !important;
     pointer-events: auto !important;
     transition: none !important;
-   
+   display: block !important;
   }
 
   .domainCard:not(.activeCard) .navButtons {
