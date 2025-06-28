@@ -73,7 +73,7 @@
   Explore an exclusive collection of .com brands tailored for slots, iGaming, betting, and online casinos. </p>
  <p class="tagline"> <span class="highlight">Trusted by operators. Built to convert.</span>
 </p>
-  <button id="openViewerBtn">Open Viewer <span class="float-arrow-right">&#129138;</span></button>
+  <button id="openViewerBtn" disabled>Loading Domains...</button>
 
   </div>
   
@@ -365,7 +365,7 @@ function loadIncludes(callback) {
       });
   });
 } 
-
+/*
 function delayedViewerInit() {
   const script = document.createElement('script');
   script.src = 'script.js';
@@ -395,7 +395,43 @@ function delayedViewerInit() {
   };
 
   document.body.appendChild(script);
+} 28/06/2025 */
+	function delayedViewerInit() {
+  const script = document.createElement('script');
+  script.src = 'script.js';
+
+  script.onload = () => {
+    allCards = document.querySelectorAll('.domainCard');
+
+    // ✅ Update viewer button now that cards are ready
+    const btn = document.getElementById('openViewerBtn');
+    if (btn) {
+      btn.textContent = 'Open Viewer';
+      btn.disabled = false;
+    }
+
+    setupContactModal();
+
+    const shouldRestore = localStorage.getItem('viewerOpen') === 'true';
+    if (shouldRestore) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (typeof setViewerState === 'function') {
+            setViewerState(true); // Open viewer with animation
+          }
+        });
+      });
+    }
+
+    // ✅ Enable animations AFTER everything is painted
+    setTimeout(() => {
+      document.documentElement.classList.remove('preload-viewer');
+    }, 100);
+  };
+
+  document.body.appendChild(script);
 }
+
 
 window.addEventListener('DOMContentLoaded', () => {
   loadIncludes(delayedViewerInit);
