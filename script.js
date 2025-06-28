@@ -4,8 +4,13 @@ const viewer = document.getElementById('domainViewer');
 //const highlightFrame = document.createElement('div');				//Commented out just now
 let resizeTimeout;
 
+/*
 
-const openBtn = document.getElementById('openViewerBtn');
+const openBtn = document.getElementById('openViewerBtn'); 28/06/25 */
+document.addEventListener('DOMContentLoaded', () => {
+   const openBtn = document.getElementById('openViewerBtn');
+   openBtn?.addEventListener('click', () => setViewerState(true));
+});
 
 const originalModalContent = document.querySelector('#contactModal .modal-content').innerHTML;
 
