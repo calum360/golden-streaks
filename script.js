@@ -7,7 +7,8 @@ let resizeTimeout;
 
 
 const openBtn = document.getElementById('openViewerBtn');
-console.log("openBtn exists?", !!openBtn); // 👈 Add this line
+console.log("openBtn on mobile?", openBtn);
+
 
 const originalModalContent = document.querySelector('#contactModal .modal-content').innerHTML;
 
