@@ -3724,11 +3724,19 @@ box-shadow: inset 0 0 8px rgba(255,255,255,0.1), 0 2px 8px rgba(0, 0, 0, 1);
 .spinfinity-x .imageWrapper{
 	border: none;
 }
+
+
 @supports (-webkit-touch-callout: none) {
   .domainCard .navButtons {
     opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
     transition: none !important;
+    position: absolute;
+    bottom: 1rem;
+  }
+
+  .domainCard:not(.activeCard) .navButtons {
+    display: none !important;
   }
 }
-
-
